@@ -49,7 +49,7 @@ export class AuthController {
     renew = ( req: Request, res: Response ) => {
         new Renew()
             .execute({ ...req.body.user } )
-            .then( data =>{console.log(data); return res.json(data)} )
+            .then( data =>{return res.json(data)} )
             .catch( error => this.handleError(error, res) );
     }
 
