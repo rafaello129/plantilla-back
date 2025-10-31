@@ -36,7 +36,7 @@ export class AuthDatasourceImpl implements AuthDatasource {
 
             return UserMapper.userEntityFromObject({ ...user });
         } catch (error) {
-            console.log(error);
+         
             if (error instanceof CustomError) throw error;
             throw CustomError.internalServer();
         } finally {
