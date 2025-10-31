@@ -39,6 +39,9 @@ export class AuthMiddleware {
       }
 
       delete user.password;
+      if(!req.body) {
+        req.body = {};
+      }
       req.body.user = { ...user };
 
       next();
