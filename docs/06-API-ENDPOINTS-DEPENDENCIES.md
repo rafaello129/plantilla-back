@@ -103,6 +103,8 @@ Este documento resume los endpoints de la API y las dependencias necesarias para
 
 ## 4. Dependencias del Proyecto Original
 
+> **Nota**: El proyecto original incluye `mysql2` como dependencia pero solo se utiliza PostgreSQL. La migración a NestJS solo necesita `pg` para PostgreSQL.
+
 ### package.json
 
 ```json

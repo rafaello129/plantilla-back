@@ -79,6 +79,8 @@ En NestJS, esta entidad se ubicaría en `src/database/entities/user.entity.ts` o
 
 **Archivo**: `src/data/postgres/postgres-database.ts`
 
+> **Nota**: El código original usa `Connection` como tipo de retorno, pero en TypeORM 0.3.x está deprecado. En NestJS se usa `DataSource` directamente a través de `@nestjs/typeorm`.
+
 ```typescript
 import { DataSource, Connection } from "typeorm";
 import { User } from "./entities";
