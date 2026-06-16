@@ -1,5 +1,5 @@
 import { envs } from "./config";
-import { PostgresDatabase } from "./data/postgres";
+import { PostgresDatabase, SeedAdmin } from "./data/postgres";
 import { AppRoutes } from "./presentation/routes";
 import { Server } from "./presentation/server";
 
@@ -18,6 +18,13 @@ const serverInstance = new Server({
             username: envs.USERNAME_DB,
             password: envs.PASSWORD_DB ?? '',
             database: envs.DATABASE_DB,
+        });
+
+        await SeedAdmin.run({
+            enabled: envs.ADMIN_SEED_ENABLED,
+            name: envs.ADMIN_SEED_NAME,
+            username: envs.ADMIN_SEED_USERNAME,
+            password: envs.ADMIN_SEED_PASSWORD,
         });
 
         await serverInstance.start();
